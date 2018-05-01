@@ -1,0 +1,41 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href= "{{url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+
+{% block title %}
+Wes Anderson Characters
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>New Religious Movement Database</h1>
+
+      <p class="lead">New Religious Movements is used to describe religious, ethical and spiritual groups, communities and practices that are relatively new. This term can also refer to cults, which are social groups defined by their religious, spiritual or philosophical beliefs, and they typically have common interest or a particular goal. While people have always been curious of cults, the interest is starting to rise with the true crime trend. However, there is not a database that can be searched to help satiate the interests of true crime seekers. While not a comprehensive database, this one is a start. Feel free to search a new religious movement or cult below, and learn a little more about what these groups are all about.</p>
+
+<ul class="lead">
+  {% for pair in pairs %}
+
+    <li><a href="{{ url_for('character', id=pair[0]) }}">{{ pair[1] }}</a></li>
+
+  {% endfor %}
+</ul>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>This project was created by Mary-Lou Watkinson for a coding class.</p>
+  </footer>
+
+</div>
+
+
+{% endblock %}

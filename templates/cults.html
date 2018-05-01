@@ -1,0 +1,35 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+{% endblock %}
+
+{% block title %}
+New Religious Movements and Cults
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>Details about {{ cult }}</h1>
+
+      <p class="lead">{{ cult }} was created by {{ founder }} in {{ year_founded }}. It is considered a/an {{ type }} religious movement. <a href="{{ movie_imdb_url }}">here</a>.</p>
+
+    <p class="lead"><a href="{{ url_for('index') }}">Return to new religious movement search.</a></p>
+
+
+    </div>
+  </div>
+
+  <footer>
+    <p>This project was created by Mary-Lou Watkinson for a coding class.</p>
+  </footer>
+  
+</div>
+
+
+{% endblock %}
